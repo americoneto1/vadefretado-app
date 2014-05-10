@@ -1,0 +1,47 @@
+
+.bar .title a {
+	text-decoration: none;
+	font-size: 120%;
+	display: block;
+}
+
+.nav-android {
+	position: absolute;
+	top: 0;
+	z-index: 100;
+	border-bottom: 1px solid #DDD !important;	
+}
+
+.nav-android a {
+	border: 0;
+	border-style: none;
+	font-size: 140%;
+}
+
+.nav-android a.android-active {
+	border-bottom: 5px solid #3b5998 !important;	
+	color: #3b5998;
+}
+
+.slider-slide {
+	padding-top: 50px;	
+	min-height: 500px;
+}
+
+.item-itinerario {
+	padding: 10px 10px !important;
+	font-size: 12px !important;
+	white-space: normal !important;
+}
+
+.item-divider {
+	border: none;
+	text-transform: uppercase;
+	font-size: 90% !important;
+	letter-spacing: -0.03em;
+	border-bottom: 2px solid #ddd;
+}
+
+.item-input {
+	z-index: 0 !important;
+}

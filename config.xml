@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.asnsistemas.vadefretado" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Vá De Fretado</name>
+    <description>
+        Aplicação que lista as linhas de fretado, baseando-se nas informações extraídas dos sites das associações.
+    </description>
+    <author email="vadefretado@asnsistemas.com.br" href="http://asnsistemas.com.br/">
+      ASN Sistemas
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <feature name="StatusBar">
+      <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+</widget>
