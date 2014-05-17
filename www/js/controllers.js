@@ -12,7 +12,7 @@ angular.module('fretado.controllers', ['ionic'])
 
     $scope.buscarLinhas = function() {      	
     	if( typeof $scope.origem !== "undefined" && typeof $scope.destino !== "undefined" ) {
-	        $location.path('/busca')
+	        $location.search('/busca')
 	            .search('origem', $scope.origem)
 	            .search('destino', $scope.destino);
         } else {
@@ -116,4 +116,10 @@ angular.module('fretado.controllers', ['ionic'])
     $scope.$on('$viewContentLoaded', function() {
 		$ionicScrollDelegate.scrollTop();
 	});
+}])
+
+.controller('SobreCtrl', ['$scope',	function ($scope) {
+
+	$scope.version = "0.0.1";
+
 }]);

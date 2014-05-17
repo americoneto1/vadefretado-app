@@ -2,7 +2,6 @@
 .bar .title a {
 	text-decoration: none;
 	font-size: 120%;
-	display: block;
 }
 
 .nav-android {
@@ -44,4 +43,12 @@
 
 .item-input {
 	z-index: 0 !important;
+}
+
+.sobre a {
+	font-size: 200%;
+}
+
+.loading.visible {
+	z-index: 10;
 }

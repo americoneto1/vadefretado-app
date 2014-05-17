@@ -6,10 +6,7 @@ angular.module('fretado.services', [])
 	var STORAGE_NAME = "API_DATA";
 
 	var CALLBACK = "?callback=JSON_CALLBACK";
-	var URL_API = "https://vadefretado.azurewebsites.net/api";
-	var URL_ASSOCIACOES = URL_API + "/associacoes" + CALLBACK;
-	var URL_LINHAS = URL_API + "/associacoes/{0}/linhas" + CALLBACK;
-	var URL_INFO = URL_API + CALLBACK;
+	var URL_API = "https://vadefretado.azure-mobile.net/api/linhas/associacoes" + CALLBACK;
 	
 	$rootScope.storageData = [];
 
@@ -33,37 +30,17 @@ angular.module('fretado.services', [])
 	return {		
 		loadData: function($scope, callback) {
 			$ionicLoading.show({
-		      template: '<i class="ion-loading-c"></i> Verificando atualizações...',
+		      template: '<i class="ion-loading-c"></i> Carregando linhas...',
 		    });
-			$http.jsonp(URL_INFO).then(function (values) {
-				if(localStorage.API_VERSION == values.data.version) {
-					$rootScope.storageData = JSON.parse(localStorage.getItem(STORAGE_NAME));
-					$ionicLoading.hide();
-					callback();
-				} else {
-					localStorage.API_VERSION = values.data.version;
-					$ionicLoading.show({
-				      template: '<i class="ion-loading-c"></i> Carregando linhas...',
-				    });
-				    $http.jsonp(URL_ASSOCIACOES).then(function (values) {
-						var urls = [];
-						for(var i = 0; i < values.data.length; i++) {
-							urls.push($http.jsonp(URL_LINHAS.replace('{0}', values.data[i]._id)));
-						}
-						return urls;
-					}).then(function (urls) {
-						return $q.all(urls).then(function (values) {
-							$rootScope.storageData = [];
-							for(var i = 0; i < values.length; i++) {
-								$rootScope.storageData.push(values[i].data);
-							}
-							localStorage.setItem(STORAGE_NAME, JSON.stringify($rootScope.storageData));
-							$ionicLoading.hide();
-							callback();
-						});
-					});
+			$http.get(URL_API).then(function (values) {	
+				$rootScope.storageData = [];
+				for(var i = 0; i < values.data.length; i++) {
+					$rootScope.storageData.push(values.data[i]);
 				}
-			}).catch(function (values) {
+				localStorage.setItem(STORAGE_NAME, JSON.stringify($rootScope.storageData));
+				$ionicLoading.hide();
+				callback();
+			}).catch(function (err) {
 				if(localStorage.getItem(STORAGE_NAME)) {
 					$rootScope.storageData = JSON.parse(localStorage.getItem(STORAGE_NAME));
 					$ionicLoading.hide();

@@ -39,6 +39,12 @@ angular.module('fretado', ['ionic', 'fretado.services', 'fretado.controllers'])
 			reloadOnSearch: false
 		})
 
+		.state('sobre', {
+			url: "/sobre",
+			templateUrl: "templates/sobre.html",
+			controller: 'SobreCtrl'
+		})
+
 	$urlRouterProvider.otherwise('/#');
 })
 

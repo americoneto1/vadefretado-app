@@ -4,9 +4,9 @@
 	<a ng-click="showEmpresa()" class="button"><i class="ion-android-note"></i></a>
 </div>
 
-<ion-scroll>
-	<ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)">
-		<ion-slide>
+<ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)">
+	<ion-slide>
+		<ion-scroll>
 	    	<div class="box list list-inset">
 	    		<h3>{{associacao.nome}}</h3>
 	    		<div class="item item-divider">Linhas atendidas</div>
@@ -15,17 +15,17 @@
 			      <p>{{ item.nome }}</p>
 			    </a>
 	    	</div>
-	  	</ion-slide>
-		<ion-slide>
-	    	<div class="box list list-inset">
-		    	<h3>{{associacao.nome}}</h3>
-		    	<img class="item-note" ng-src="img/{{associacao.nome}}.jpg" alt="{{associacao.nome}}">
-				<p>Telefone: {{associacao.telefone}}</p>
-				<p>Endereço: {{associacao.endereco}}</p>
-				<p>E-mail: {{associacao.email}}</p>
-				<p>Site: {{associacao.site}}</p>
-				<a ng-href="tel:{{associacao.telefone}}" class="button button-block button-balanced"><i class="ion-android-call"></i> Ligar para {{associacao.nome}}</a>
-	    	</div>
-	  	</ion-slide>  	
-	</ion-slide-box>
-</ion-scroll>
+    	</ion-scroll>
+  	</ion-slide>
+	<ion-slide>
+    	<div class="box list list-inset">
+	    	<h3>{{associacao.nome}}</h3>
+	    	<img class="item-note" ng-src="img/{{associacao.nome}}.jpg" alt="{{associacao.nome}}">
+			<p>Telefone: {{associacao.telefone}}</p>
+			<p>Endereço: {{associacao.endereco}}</p>
+			<p>E-mail: {{associacao.email}}</p>
+			<p>Site: {{associacao.site}}</p>
+			<a ng-href="tel:{{associacao.telefone}}" class="button button-block button-balanced"><i class="ion-android-call"></i> Ligar para {{associacao.nome}}</a>
+    	</div>
+  	</ion-slide>  	
+</ion-slide-box>

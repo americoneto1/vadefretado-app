@@ -5,19 +5,24 @@
 	<a ng-click="showVolta()" class="button"><i class="ion-arrow-left-a"></i></a>
 </div>
 
-<ion-scroll>
-  <ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)">
-  	<ion-slide>
-      	<div class="box list list-inset">
-  	    	<h3>{{associacao.nome}} - Linha {{linha.numero}}</h3>
-    			<p>{{linha.nome}}</p>
-    			<p ng-show="linha.coordenador.nome">Coordenador: {{linha.coordenador.nome}}</p>
-    			<p ng-show="linha.coordenador.telefone">Telefone: {{linha.coordenador.telefone}}</p>
-    			<p ng-show="linha.coordenador.email">E-mail: {{linha.coordenador.email}}</p>
-          <a href="#/linhas/{{associacao._id}}" class="button button-block button-stable">Ver outras linhas atendidas</a>
+<ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)">
+	<ion-slide>
+    	<div class="box list list-inset">
+	    	<h3>{{associacao.nome}} - Linha {{linha.numero}}</h3>
+  			<p>{{linha.nome}}</p>
+  			<p ng-show="linha.coordenador.nome">Coordenador: {{linha.coordenador.nome}}</p>
+  			<p ng-show="linha.coordenador.telefone">Telefone: {{linha.coordenador.telefone}}</p>
+  			<p ng-show="linha.coordenador.email">E-mail: {{linha.coordenador.email}}</p>
+        <div class="button-bar">
+          <a ng-click="showIda()" class="button button-balanced"><i class="ion-arrow-right-a"></i> Ida</a>
+          <a ng-click="showVolta()" class="button button-balanced"><i class="ion-arrow-left-a"></i> Volta</a>
         </div>
-    	</ion-slide>  
-  	<ion-slide>
+        <br />
+        <a href="#/linhas/{{associacao._id}}" class="button button-block button-stable">Ver outras linhas atendidas</a>
+      </div>
+  	</ion-slide>  
+	<ion-slide>
+      <ion-scroll>
       	<div class="box list list-inset">    		
       		<h3>{{associacao.nome}} - Linha {{linha.numero}} - Ida</h3>    		
       		<div class="item item-divider">Trajeto de ida</div>
@@ -25,16 +30,17 @@
   		      {{ item }}
   		    </div>
       	</div>
-    	</ion-slide>
-    	<ion-slide>
+      </ion-scroll>
+  	</ion-slide>
+  	<ion-slide>
+      <ion-scroll>
       	<div class="box list list-inset">
       		<h3>{{associacao.nome}} - Linha {{linha.numero}} - Volta</h3>
       		<div class="item item-divider">Trajeto de volta</div>
       		<div ng-repeat="item in linha.volta" class="item item-itinerario">
   		      {{ item }}
   		    </div>
-      	</div>
-    	</ion-slide>
-  		
-  </ion-slide-box>
-</ion-scroll>
+        </div>
+      </ion-scroll>
+  	</ion-slide>  		
+</ion-slide-box>
