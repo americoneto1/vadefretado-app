@@ -81,19 +81,10 @@ $dark:                            #444 !default;
   100% {
     transform: rotate(359deg); } }
 
-
 .ion-loading-a {
   -webkit-animation-timing-function: steps(8, start);
   -moz-animation-timing-function: steps(8, start);
   animation-timing-function: steps(8, start); }
-
-
-
-
-
-
-
-
 
 .ion-alert:before {
   content: "\f101"; }
@@ -5647,7 +5638,6 @@ a.button {
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     animation-fill-mode: both; }
-
 
 .slide-out-left-add {
   -webkit-transform: translate3d(0, 0, 0);
