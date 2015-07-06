@@ -1,3 +1,16 @@
+;(function() {
+	'use strict';
+
+	angular.module('fretado', [
+		'app.core',
+		'app.companies',
+		'app.line',
+		'app.search'
+	]);
+
+}());
+
+/*
 // Vá de Fretado App
 
 angular.module('fretado', ['ionic', 'fretado.services', 'fretado.controllers'])
@@ -57,3 +70,4 @@ Object.prototype.clone = function() {
     } else newObj[i] = this[i]
   } return newObj;
 };
+*/

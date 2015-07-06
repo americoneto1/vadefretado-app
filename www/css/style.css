@@ -1,30 +1,12 @@
 
-.bar .title a {
-	text-decoration: none;
-	font-size: 120%;
-}
-
-.nav-android {
-	position: absolute;
-	top: 0;
-	z-index: 100;
-	border-bottom: 1px solid #DDD !important;	
-}
-
-.nav-android a {
-	border: 0;
-	border-style: none;
-	font-size: 140%;
-}
-
-.nav-android a.android-active {
-	border-bottom: 5px solid #3b5998 !important;	
-	color: #3b5998;
-}
-
-.slider-slide {
-	padding-top: 50px;	
-	min-height: 500px;
+.home-land {
+  position: relative;
+  padding: 15px;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  background: url(../img/home.jpg) center center;
+  height: 120px;
 }
 
 .item-itinerario {
@@ -39,16 +21,4 @@
 	font-size: 90% !important;
 	letter-spacing: -0.03em;
 	border-bottom: 2px solid #ddd;
-}
-
-.item-input {
-	z-index: 0 !important;
-}
-
-.sobre a {
-	font-size: 200%;
-}
-
-.loading.visible {
-	z-index: 10;
 }

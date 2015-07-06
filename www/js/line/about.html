@@ -1,0 +1,14 @@
+<ion-view view-title="AEBS - Linha 01">
+	<ion-content padding="true">
+		<p>{{linha.nome}}</p>
+		<p ng-show="linha.coordenador.nome">Coordenador: {{linha.coordenador.nome}}</p>
+		<p ng-show="linha.coordenador.telefone">Telefone: {{linha.coordenador.telefone}}</p>
+		<p ng-show="linha.coordenador.email">E-mail: {{linha.coordenador.email}}</p>
+        <div class="button-bar">
+          <a href="#/app/line/1/departure" class="button button-balanced"><i class="ion-arrow-right-a"></i> Ida</a>
+          <a href="#/app/line/1/return" class="button button-balanced"><i class="ion-arrow-left-a"></i> Volta</a>
+        </div>
+        <br />
+        <a href="#/app/company/1/lines" class="button button-block button-stable">Ver outras linhas atendidas</a>
+    </ion-content>
+</ion-view>
