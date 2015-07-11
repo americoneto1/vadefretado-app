@@ -10,11 +10,27 @@
 		$stateProvider
 			.state('app.line', {
 				url: "/line/:id",
+				params: {
+					companyId: null
+				},
 			    abstract: true,
 			    views: {
 			      'menuContent': {
+			      	controller: 'LineCtrl as vm',
 			        templateUrl: "js/line/line.html"
 			      }
+			    },
+			    resolve: {
+			    	lineData: function(line, $stateParams) {
+			    		return line.get($stateParams.id).success(function (data) {
+							return data;
+						});
+			    	},
+			    	companyData: function(companies, $stateParams) {
+			    		return companies.get($stateParams.companyId).success(function (data) {
+							return data;
+			    		});
+			    	}
 			    }
 			})
 			.state('app.line.about', {

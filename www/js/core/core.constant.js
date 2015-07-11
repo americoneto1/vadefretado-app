@@ -3,6 +3,6 @@
 
 	angular.module('app.core')
 		.constant('AppSettings', {
-			api: 'https://vadefretado.azure-mobile.net/api'
+			api: 'http://localhost:9000/api/v1'
 		}); 
 }());

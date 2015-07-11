@@ -1,14 +1,20 @@
-<ion-view view-title="AEBS - Linha 01">
+<ion-view view-title="{{vm.company.nome + ' - Linha ' + vm.line.numero}}">
 	<ion-content padding="true">
-		<p>{{linha.nome}}</p>
-		<p ng-show="linha.coordenador.nome">Coordenador: {{linha.coordenador.nome}}</p>
-		<p ng-show="linha.coordenador.telefone">Telefone: {{linha.coordenador.telefone}}</p>
-		<p ng-show="linha.coordenador.email">E-mail: {{linha.coordenador.email}}</p>
-        <div class="button-bar">
-          <a href="#/app/line/1/departure" class="button button-balanced"><i class="ion-arrow-right-a"></i> Ida</a>
-          <a href="#/app/line/1/return" class="button button-balanced"><i class="ion-arrow-left-a"></i> Volta</a>
-        </div>
-        <br />
-        <a href="#/app/company/1/lines" class="button button-block button-stable">Ver outras linhas atendidas</a>
-    </ion-content>
+		<p>{{vm.line.nome}}</p>
+		<p ng-show="vm.line.coordenador.nome">Coordenador: {{vm.line.coordenador.nome}}</p>
+		<p ng-show="vm.line.coordenador.telefone">Telefone: {{vm.line.coordenador.telefone}}</p>
+		<p ng-show="vm.line.coordenador.email">E-mail: {{vm.line.coordenador.email}}</p>
+    <div class="button-bar">
+      <a ui-sref="app.line.departure({id: vm.line._id})" class="button icon-left ion-arrow-right-c button-balanced">
+        Ida
+      </a>
+      <a ui-sref="app.line.return({id: vm.line._id})" class="button icon-left ion-arrow-right-c button-balanced">
+        Volta
+      </a>
+    </div>
+    <br />
+    <a ui-sref="app.company.lines({id: vm.company._id})" class="button icon-left ion-android-bus button-block button-stable">
+      Ver outras linhas atendidas
+    </a>
+  </ion-content>
 </ion-view>

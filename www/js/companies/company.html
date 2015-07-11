@@ -1,8 +1,8 @@
 <ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
-  <ion-tab title="Linhas" icon="ion-android-bus" href="#/app/company/1/lines">
+  <ion-tab title="Linhas" icon="ion-android-bus" ui-sref="app.company.lines({id: vm.company._id})">
     <ion-nav-view name="company-lines"></ion-nav-view>
   </ion-tab>
-  <ion-tab title="Sobre" icon="ion-clipboard" href="#/app/company/1/info">
+  <ion-tab title="Sobre" icon="ion-clipboard" ui-sref="app.company.info({id: vm.company._id})">
     <ion-nav-view name="company-info"></ion-nav-view>
   </ion-tab>
 </ion-tabs>

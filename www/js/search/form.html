@@ -1,32 +1,40 @@
 <ion-view view-title="Busca">
 	<ion-content padding="true">
-	  <label class="item item-input item-floating-label">
-	    <span class="input-label">Endereço ou referência de origem</span>
-	    <input type="text" placeholder="Endereço ou referência de origem">
+	  <label class="item item-input">
+	    <span class="input-label">Origem</span>
+	    <input type="text" ng-model="vm.origem" placeholder="Endereço ou referência">
 	  </label>
-	  <label class="item item-input item-floating-label">
-	    <span class="input-label">Endereço ou referência de destino</span>
-	    <input type="text" placeholder="Endereço ou referência de destino">
+	  <label class="item item-input">
+	    <span class="input-label">Destino</span>
+	    <input type="text" ng-model="vm.destino" placeholder="Endereço ou referência">
 	  </label>
 
-	  <button class="button button-block button-dark">
+	  <button class="button button-block button-dark" ng-click="vm.doSearch()">
 	  	Encontrar fretado
 	  </button>
 
-	  <ion-list>
-      	<ion-item class="item-divider">
-        	AEBS
-        </ion-item>
-        <ion-item class="item-avatar" href="#/app/line/1/about">
-        	<img src="img/AEBS.jpg">
-        	<h2>Linha 01</h2>
-        	<p>Desc</p>
-        </ion-item>
-        <ion-item class="item-avatar" href="#/app/line/1/about">
-        	<img src="img/AEBS.jpg">
-        	<h2>Linha 02</h2>
-        	<p>Desc</p>
-        </ion-item>
-  	  </ion-list>
+      <br />
+      <div ng-if="vm.results && vm.results.length">
+        <h4>Resultados da busca</h4>
+        <br />
+    	<ion-list>
+            <ion-item class="item" ng-repeat="item in vm.results">
+                <div class="text-center">
+                    <img src="img/{{item.company.nome}}.jpg">
+                </div>
+                <ion-item ng-repeat="line in item.lines" ui-sref="app.line.about({id: line._id, companyId: item.company._id})">
+                	<div class="lineNumber">{{line.numero}}</div>
+                	<h2>Linha {{line.numero}}</h2>
+                	<p>{{line.nome}}</p>
+                </ion-item>
+            </ion-item>
+      	</ion-list>
+      </div>
+
+      <div ng-if="vm.results && vm.results.length == 0">
+        <h4>Nenhum resultado encontrado</h4>
+        <br />
+      </div>
+
     </ion-content>
 </ion-view>

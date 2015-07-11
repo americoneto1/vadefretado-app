@@ -9,10 +9,24 @@
   height: 120px;
 }
 
-.item-itinerario {
-	padding: 10px 10px !important;
-	font-size: 12px !important;
-	white-space: normal !important;
+.text-center {
+	text-align: center;
+}
+
+.lineNumber {
+	background-color: #43cee6;
+	color: #FFF;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	padding-top: 10px;
+	margin-right: 10px;
+	float: left;
+}
+
+.description {
+	font-size: 80% !important;
 }
 
 .item-divider {

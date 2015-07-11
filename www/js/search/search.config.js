@@ -12,18 +12,11 @@
 		  		url: "/search",
 		  		views: {
 			      'menuContent': {
+			      	controller: 'SearchCtrl as vm',
 			        templateUrl: "js/search/form.html"
 			      }
 			    }
-		  	})
-			.state('app.results', {
-				url: '/results',
-				views: {
-			      'menuContent': {
-			        templateUrl: "js/search/results.html"
-			      }
-			    }
-			});
+		  	});
 	}
 
 }());

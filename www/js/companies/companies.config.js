@@ -13,8 +13,21 @@
 			    abstract: true,
 			    views: {
 			      'menuContent': {
+			      	controller: 'CompanyCtrl as vm',
 			        templateUrl: "js/companies/company.html"
 			      }
+			    },
+			    resolve: {
+			    	linesData: function(lines, $stateParams) {
+			    		return lines.get($stateParams.id).success(function (data) {
+			    			return data;
+			    		});
+			    	},
+			    	companyData: function(companies, $stateParams) {
+			    		return companies.get($stateParams.id).success(function (data) {
+							return data;
+			    		});
+			    	}
 			    }
 			})
 			.state('app.company.lines', {

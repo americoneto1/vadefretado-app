@@ -4,9 +4,11 @@
 	angular.module('app.core')
 		.config(configure);
 
-	configure.$inject = ['$stateProvider', '$urlRouterProvider'];
+	configure.$inject = ['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider'];
 
-	function configure($stateProvider, $urlRouterProvider) {
+	function configure($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+		$ionicConfigProvider.views.maxCache(0);
+
 		$stateProvider
 			.state('app', {
 		    	url: "/app",
@@ -25,8 +27,16 @@
 				url: '/home',
 				views: {
 			      'menuContent': {
+			      	controller: 'HomeCtrl as vm',
 			        templateUrl: "js/core/home.html"
 			      }
+			    },
+			    resolve: {
+			    	companiesList: function(companies) {
+			    		return companies.getAll().success(function (data) {
+			    			return data;
+			    		});
+			    	}
 			    }
 			});
 

@@ -1,11 +1,11 @@
 <ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
-  <ion-tab title="Sobre" icon="ion-information-circled" href="#/app/line/1/about">
+  <ion-tab title="Sobre" icon="ion-information-circled" ui-sref="app.line.about({id: vm.line._id})">
     <ion-nav-view name="company-line-about"></ion-nav-view>
   </ion-tab>
-  <ion-tab title="Ida" icon="ion-arrow-right-c" href="#/app/line/1/departure">
+  <ion-tab title="Ida" icon="ion-arrow-right-c" ui-sref="app.line.departure({id: vm.line._id})">
     <ion-nav-view name="company-line-departure"></ion-nav-view>
   </ion-tab>
-  <ion-tab title="Volta" icon="ion-arrow-left-c" href="#/app/line/1/return">
+  <ion-tab title="Volta" icon="ion-arrow-left-c" ui-sref="app.line.return({id: vm.line._id})">
     <ion-nav-view name="company-line-return"></ion-nav-view>
   </ion-tab>
 </ion-tabs>

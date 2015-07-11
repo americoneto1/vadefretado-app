@@ -1,41 +1,10 @@
-<ion-view view-title="Linhas AEBS">
+<ion-view view-title="{{'Linhas ' + vm.company.nome}}">
   <ion-content padding="true">
     <ion-list>
-        <ion-item href="#/app/line/1/about">
-          <h2>Linha 01</h2>
-          <p>Desc</p>
-        </ion-item>
-        <ion-item href="#/app/line/1/about">
-          <h2>Linha 02</h2>
-          <p>Desc</p>
-        </ion-item>
-        <ion-item href="#/app/line/1/about">
-          <h2>Linha 03</h2>
-          <p>Desc</p>
-        </ion-item>
-        <ion-item href="#/app/line/1/about">
-          <h2>Linha 01</h2>
-          <p>Desc</p>
-        </ion-item>
-        <ion-item href="#/app/line/1/about">
-          <h2>Linha 02</h2>
-          <p>Desc</p>
-        </ion-item>
-        <ion-item href="#/app/line/1/about">
-          <h2>Linha 03</h2>
-          <p>Desc</p>
-        </ion-item>
-        <ion-item href="#/app/line/1/about">
-          <h2>Linha 01</h2>
-          <p>Desc</p>
-        </ion-item>
-        <ion-item href="#/app/line/1/about">
-          <h2>Linha 02</h2>
-          <p>Desc</p>
-        </ion-item>
-        <ion-item href="#/app/line/1/about">
-          <h2>Linha 03</h2>
-          <p>Desc</p>
+        <ion-item ui-sref="app.line.about({id: item._id, companyId: vm.company._id})" ng-repeat="item in vm.lines">
+          <div class="lineNumber">{{item.numero}}</div>
+          <h2>Linha {{item.numero}}</h2>
+          <p class="description">{{item.nome}}</p>
         </ion-item>
       </ion-list>
   </ion-content>

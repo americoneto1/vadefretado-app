@@ -1,10 +1,12 @@
-<ion-view view-title="Sobre AEBS">
+<ion-view view-title="{{'Sobre ' + vm.company.nome}}">
   <ion-content padding="true">
-	<img class="item-note" ng-src="img/{{associacao.nome}}.jpg" alt="{{associacao.nome}}">
-	<p>Telefone: {{associacao.telefone}}</p>
-	<p>Endereço: {{associacao.endereco}}</p>
-	<p>E-mail: {{associacao.email}}</p>
-	<p>Site: {{associacao.site}}</p>
-	<a ng-href="tel:{{associacao.telefone}}" class="button button-block button-balanced"><i class="ion-android-call"></i> Ligar para {{associacao.nome}}</a>
+	<img class="item-note" ng-src="img/{{vm.company.nome}}.jpg" alt="{{vm.company.nome}}">
+	<p>Telefone: {{vm.company.telefone}}</p>
+	<p>Endereço: {{vm.company.endereco}}</p>
+	<p>E-mail: {{vm.company.email}}</p>
+	<p>Site: {{vm.company.site}}</p>
+	<a ng-href="tel:{{vm.company.telefone}}" class="button icon-left ion-android-call button-block button-balanced">
+		Ligar para {{vm.company.nome}}
+	</a>
   </ion-content>
 </ion-view>

@@ -9,7 +9,7 @@
         </button>
       </ion-nav-buttons>
       <ion-nav-buttons side="right">
-        <a class="button button-icon button-clear ion-android-search" href="#/app/search">
+        <a class="button button-icon button-clear ion-android-search" ui-sref="app.search">
         </a>
       </ion-nav-buttons>
     </ion-nav-bar>
@@ -22,13 +22,13 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close class="item-icon-left" href="#/">
+        <ion-item menu-close class="item-icon-left" ui-sref="app.home">
           <i class="icon ion-android-home"></i>Home
         </ion-item>
-        <ion-item menu-close class="item-icon-left" href="#/app/search">
+        <ion-item menu-close class="item-icon-left" ui-sref="app.search">
           <i class="icon ion-android-search"></i>Busca
         </ion-item>
-        <ion-item menu-close class="item-icon-left" href="#/app/about">
+        <ion-item menu-close class="item-icon-left" ui-sref="app.about">
           <i class="icon ion-information-circled"></i>Sobre
         </ion-item>
       </ion-list>
