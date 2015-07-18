@@ -19,12 +19,12 @@
 			    },
 			    resolve: {
 			    	linesData: function(lines, $stateParams) {
-			    		return lines.get($stateParams.id).success(function (data) {
+			    		return lines.get($stateParams.id).then(function (data) {
 			    			return data;
 			    		});
 			    	},
 			    	companyData: function(companies, $stateParams) {
-			    		return companies.get($stateParams.id).success(function (data) {
+			    		return companies.get($stateParams.id).then(function (data) {
 							return data;
 			    		});
 			    	}

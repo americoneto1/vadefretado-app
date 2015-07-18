@@ -8,8 +8,8 @@
 
 	function lineCtrl(lineData, companyData) {
 		var vm = this;
-		vm.line = lineData.data;
-		vm.company = companyData.data;
+		vm.line = lineData;
+		vm.company = companyData;
 	};
 
 }());

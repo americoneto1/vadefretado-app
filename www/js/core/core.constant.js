@@ -3,6 +3,6 @@
 
 	angular.module('app.core')
 		.constant('AppSettings', {
-			api: 'http://localhost:9000/api/v1'
+			api: 'http://vadefretado.herokuapp.com/api/v1'
 		}); 
 }());

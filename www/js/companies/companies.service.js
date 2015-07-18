@@ -4,9 +4,9 @@
 	angular.module('app.companies')
 		.factory('companies', companies);
 
-	companies.$inject = ['$http', 'AppSettings'];
+	companies.$inject = ['util', 'AppSettings'];
 
-	function companies($http, AppSettings) {
+	function companies(util, AppSettings) {
 		var service = {
 			get: get,
 			getAll: getAll
@@ -15,11 +15,11 @@
 		return service;
 
 		function get(companyId) {
-			return $http.get(AppSettings.api + '/companies/' + companyId);
+			return util.getData(AppSettings.api + '/companies/' + companyId);
 		}
 
 		function getAll() {
-			return $http.get(AppSettings.api + '/companies');
+			return util.getData(AppSettings.api + '/companies');
 		}
 	}
 

@@ -4,7 +4,7 @@
 	angular.module('app.core')
 		.config(configure);
 
-	configure.$inject = ['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider'];
+	configure.$inject = ['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', '$httpProvider'];
 
 	function configure($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 		$ionicConfigProvider.views.maxCache(0);
@@ -33,7 +33,7 @@
 			    },
 			    resolve: {
 			    	companiesList: function(companies) {
-			    		return companies.getAll().success(function (data) {
+			    		return companies.getAll().then(function (data) {
 			    			return data;
 			    		});
 			    	}

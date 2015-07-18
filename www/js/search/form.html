@@ -2,11 +2,11 @@
 	<ion-content padding="true">
 	  <label class="item item-input">
 	    <span class="input-label">Origem</span>
-	    <input type="text" ng-model="vm.origem" placeholder="Endereço ou referência">
+	    <input type="text" ng-model="vm.origem" maxlength="20" placeholder="Endereço ou referência">
 	  </label>
 	  <label class="item item-input">
 	    <span class="input-label">Destino</span>
-	    <input type="text" ng-model="vm.destino" placeholder="Endereço ou referência">
+	    <input type="text" ng-model="vm.destino" maxlength="20" placeholder="Endereço ou referência">
 	  </label>
 
 	  <button class="button button-block button-dark" ng-click="vm.doSearch()">

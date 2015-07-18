@@ -4,9 +4,9 @@
 	angular.module('app.search')
 		.factory('search', search);
 
-	search.$inject = ['$http', 'AppSettings'];
+	search.$inject = ['util', 'AppSettings'];
 
-	function search($http, AppSettings) {
+	function search(util, AppSettings) {
 		var service = {
 			get: get
 		};
@@ -14,7 +14,7 @@
 		return service;
 
 		function get(origem, destino) {
-			return $http.get(AppSettings.api + '/search?origem=' + origem + '&destino=' + destino);
+			return util.getData(AppSettings.api + '/search?origem=' + origem + '&destino=' + destino);
 		}
 	}
 

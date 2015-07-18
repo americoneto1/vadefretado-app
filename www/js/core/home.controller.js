@@ -8,7 +8,7 @@
 
 	function homeCtrl(companiesList) {
 		var vm = this;
-		vm.companies = companiesList.data;
+		vm.companies = companiesList;
 	}
 
 }());

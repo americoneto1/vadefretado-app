@@ -4,9 +4,9 @@
 	angular.module('app.line')
 		.factory('line', line);
 
-	line.$inject = ['$http', 'AppSettings'];
+	line.$inject = ['util', 'AppSettings'];
 
-	function line($http, AppSettings) {
+	function line(util, AppSettings) {
 		var service = {
 			get: get
 		};
@@ -14,7 +14,7 @@
 		return service;
 
 		function get(lineId) {
-			return $http.get(AppSettings.api + '/lines/' + lineId);
+			return util.getData(AppSettings.api + '/lines/' + lineId);
 		}
 	}
 

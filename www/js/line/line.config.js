@@ -22,12 +22,12 @@
 			    },
 			    resolve: {
 			    	lineData: function(line, $stateParams) {
-			    		return line.get($stateParams.id).success(function (data) {
+			    		return line.get($stateParams.id).then(function (data) {
 							return data;
 						});
 			    	},
 			    	companyData: function(companies, $stateParams) {
-			    		return companies.get($stateParams.companyId).success(function (data) {
+			    		return companies.get($stateParams.companyId).then(function (data) {
 							return data;
 			    		});
 			    	}
