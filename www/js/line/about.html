@@ -1,9 +1,12 @@
 <ion-view view-title="{{vm.company.nome + ' - Linha ' + vm.line.numero}}">
 	<ion-content padding="true">
-		<p>{{vm.line.nome}}</p>
-		<p ng-show="vm.line.coordenador.nome">Coordenador: {{vm.line.coordenador.nome}}</p>
-		<p ng-show="vm.line.coordenador.telefone">Telefone: {{vm.line.coordenador.telefone}}</p>
-		<p ng-show="vm.line.coordenador.email">E-mail: {{vm.line.coordenador.email}}</p>
+    <div class="item-note">
+      <a class="button button-icon energized icon" ng-class="vm.isFavorite ? 'ion-android-star' : 'ion-android-star-outline'" ng-click="vm.favorite()"></a>
+    </div>
+    <p>{{vm.line.nome}}</p>
+    <p ng-show="vm.line.coordenador.nome">Coordenador: {{vm.line.coordenador.nome}}</p>
+    <p ng-show="vm.line.coordenador.telefone">Telefone: {{vm.line.coordenador.telefone}}</p>
+    <p ng-show="vm.line.coordenador.email">E-mail: {{vm.line.coordenador.email}}</p>
     <div class="button-bar">
       <a ui-sref="app.line.departure({id: vm.line._id})" class="button icon-left ion-arrow-right-c button-balanced">
         Ida

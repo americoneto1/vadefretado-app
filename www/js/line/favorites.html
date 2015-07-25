@@ -1,0 +1,21 @@
+<ion-view view-title="Favoritos">
+	<ion-content padding="true">
+    	<ion-list>
+        <ion-item class="item" ng-repeat="item in vm.results">
+            <div class="text-center">
+                <img src="img/{{item.company.nome}}.jpg">
+            </div>
+            <ion-item ng-repeat="line in item.lines" ui-sref="app.line.about({id: line._id, companyId: item.company._id})">
+            	<div class="lineNumber">{{line.numero}}</div>
+            	<h2>Linha {{line.numero}}</h2>
+            	<p>{{line.nome}}</p>
+            </ion-item>
+        </ion-item>
+    	</ion-list>
+
+      <div ng-if="vm.results && vm.results.length == 0">
+        <h4>Nenhuma linha favorita</h4>
+        <br />
+      </div>
+    </ion-content>
+</ion-view>

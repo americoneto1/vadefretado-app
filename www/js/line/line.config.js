@@ -56,6 +56,15 @@
 			        templateUrl: "js/line/return.html"
 			      }
 			    }
+		  	})
+		  	.state('app.favorites', {
+		  		url: "/favorites",
+		  		views: {
+			      'menuContent': {
+			      	controller: "FavoritesCtrl as vm",
+			        templateUrl: "js/line/favorites.html"
+			      }
+			    }
 		  	});
 	}
 
